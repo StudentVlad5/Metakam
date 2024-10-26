@@ -25,6 +25,7 @@ p {
   padding: 4px;
   border-radius: 6px;
   list-style: none;
+  text-transform: capitalize;
   box-shadow: 0 2px 10px var(--black-a7);
   margin: 0;
 }
@@ -35,6 +36,7 @@ p {
   outline: none;
   user-select: none;
   font-weight: 500;
+  text-transform: capitalize;
   line-height: 1;
   border-radius: 4px;
   font-size: 15px;
@@ -159,6 +161,7 @@ p {
   border-radius: 6px;
   font-size: 15px;
   line-height: 1;
+  text-transform: capitalize;
 }
 .ListItemLink:focus {
   box-shadow: 0 0 0 2px var(--violet-7);
@@ -178,6 +181,7 @@ p {
   color: var(--mauve-11);
   line-height: 1.4;
   font-weight: initial;
+  text-transform: capitalize;
 }
 
 .Callout {

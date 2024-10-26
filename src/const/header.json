@@ -1,102 +1,99 @@
 [
   {
-    "About": {
-      "id": 1,
-      "name": "About",
-      "item": [
-        {
-          "id": 1,
-          "image": "none",
-          "name": "Company",
-          "discription": "Address, name, state",
-          "link": "/about"
-        },
-        {
-          "id": 2,
-          "image": "none",
-          "name": "Contacts",
-          "discription": "Contacts info",
-          "link": "/contacts"
-        },
-        {
-          "id": 3,
-          "image": "none",
-          "name": "Delivery",
-          "discription": "Delivery info",
-          "link": "/delivery"
-        },
-        {
-          "id": 4,
-          "image": "none",
-          "name": "Payment",
-          "discription": "Payment info",
-          "link": "/payment"
-        },
-        {
-          "id": 5,
-          "image": "none",
-          "name": "Returns",
-          "discription": "Returns info",
-          "link": "/returns"
-        }
-      ]
-    }
+    "id": 1,
+    "code": "one",
+    "name": "About",
+    "item": [
+      {
+        "id": 1,
+        "image": "none",
+        "name": "Company",
+        "description": "Address, name, state",
+        "link": "/about"
+      },
+      {
+        "id": 2,
+        "image": "none",
+        "name": "Contacts",
+        "description": "Contacts info",
+        "link": "/contacts"
+      },
+      {
+        "id": 3,
+        "image": "none",
+        "name": "Delivery",
+        "description": "Delivery info",
+        "link": "/delivery"
+      },
+      {
+        "id": 4,
+        "image": "none",
+        "name": "Payment",
+        "description": "Payment info",
+        "link": "/payment"
+      },
+      {
+        "id": 5,
+        "image": "none",
+        "name": "Returns",
+        "description": "Returns info",
+        "link": "/returns"
+      }
+    ]
   },
   {
-    "Shop": {
-      "id": 2,
-      "name": "Shop",
-      "item": [
-        {
-          "id": 1,
-          "image": "none",
-          "name": "For man",
-          "discription": "For man",
-          "link": "/shop?=forman"
-        },
-        {
-          "id": 2,
-          "image": "none",
-          "name": "For Woman",
-          "discription": "For Woman",
-          "link": "/shop?=forwoman"
-        },
-        {
-          "id": 3,
-          "image": "none",
-          "name": "jacets",
-          "discription": "jacets info",
-          "link": "/shop?=jacets"
-        },
-        {
-          "id": 4,
-          "image": "none",
-          "name": "pants",
-          "discription": "pants info",
-          "link": "/shop?=pants"
-        },
-        {
-          "id": 5,
-          "image": "none",
-          "name": "underwear",
-          "discription": "underwear info",
-          "link": "/shop?=underwear"
-        },
-        {
-          "id": 6,
-          "image": "none",
-          "name": "skirts",
-          "discription": "skirts info",
-          "link": "/shop?=skirts"
-        }
-      ]
-    }
+    "id": 2,
+    "code": "two",
+    "name": "Shop",
+    "item": [
+      {
+        "id": 1,
+        "image": "none",
+        "name": "For man",
+        "description": "For man",
+        "link": "/shop?=forman"
+      },
+      {
+        "id": 2,
+        "image": "none",
+        "name": "For Woman",
+        "description": "For Woman",
+        "link": "/shop?=forwoman"
+      },
+      {
+        "id": 3,
+        "image": "none",
+        "name": "jacets",
+        "description": "jacets info",
+        "link": "/shop?=jacets"
+      },
+      {
+        "id": 4,
+        "image": "none",
+        "name": "pants",
+        "description": "pants info",
+        "link": "/shop?=pants"
+      },
+      {
+        "id": 5,
+        "image": "none",
+        "name": "underwear",
+        "description": "underwear info",
+        "link": "/shop?=underwear"
+      },
+      {
+        "id": 6,
+        "image": "none",
+        "name": "skirts",
+        "description": "skirts info",
+        "link": "/shop?=skirts"
+      }
+    ]
   },
   {
-    "Gift": {
-      "id": 3,
-      "name": "Gift",
-      "link": "/gift"
-    }
+    "id": 3,
+    "code": "three",
+    "name": "Gift",
+    "link": "/gift"
   }
 ]
