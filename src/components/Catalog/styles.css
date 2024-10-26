@@ -1,0 +1,22 @@
+.cardItem {
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  :hover {
+    background-color: rgb(244, 242, 242);
+  }
+}
+.cardItem:hover,
+.cardItem:hover h3,
+.cardItem:hover p {
+  background-color: rgb(244, 242, 242);
+}
+.buyButton:hover {
+  background-color: rgb(245, 162, 8);
+}
+.cardImage {
+  border-radius: 20px;
+}
+.radix-themes {
+  --cursor-button: grabbing;
+}

@@ -8,52 +8,57 @@ import data from "../../const/header.json";
 
 export const HeaderComponent = () => {
   return (
-    <NavigationMenu.Root className="NavigationMenuRoot">
-      <NavigationMenu.List className="NavigationMenuList">
-        {data.map((it) => {
-          return (
-            <NavigationMenu.Item key={it.id}>
-              {it.item ? (
-                <>
-                  <NavigationMenu.Trigger className="NavigationMenuTrigger">
-                    {it.name}{" "}
-                    <CaretDownIcon className="CaretDown" aria-hidden />
-                  </NavigationMenu.Trigger>
-
-                  <NavigationMenu.Content className="NavigationMenuContent">
-                    <ul className={`List ${it.code}`}>
-                      {it.item.map((i) => {
-                        return (
-                          <ListItem key={i.id} href={i.link} title={i.name}>
-                            {i.description}
-                          </ListItem>
-                        );
-                      })}
-                    </ul>
-                  </NavigationMenu.Content>
-                </>
-              ) : (
-                <NavigationMenu.Link
-                  key={it.id}
-                  className="NavigationMenuLink"
-                  href={it.link}
-                >
-                  {it.name}
-                </NavigationMenu.Link>
-              )}
-            </NavigationMenu.Item>
-          );
-        })}
-
-        <NavigationMenu.Indicator className="NavigationMenuIndicator">
-          <div className="Arrow" />
-        </NavigationMenu.Indicator>
-      </NavigationMenu.List>
-
-      <div className="ViewportPosition">
-        <NavigationMenu.Viewport className="NavigationMenuViewport" />
+    <div className="headerContainer">
+      <div className="logo">
+        <h1>Metakam</h1>
       </div>
-    </NavigationMenu.Root>
+      <NavigationMenu.Root className="NavigationMenuRoot">
+        <NavigationMenu.List className="NavigationMenuList">
+          {data.map((it) => {
+            return (
+              <NavigationMenu.Item key={it.id}>
+                {it.item ? (
+                  <>
+                    <NavigationMenu.Trigger className="NavigationMenuTrigger">
+                      {it.name}{" "}
+                      <CaretDownIcon className="CaretDown" aria-hidden />
+                    </NavigationMenu.Trigger>
+
+                    <NavigationMenu.Content className="NavigationMenuContent">
+                      <ul className={`List ${it.code}`}>
+                        {it.item.map((i) => {
+                          return (
+                            <ListItem key={i.id} href={i.link} title={i.name}>
+                              {i.description}
+                            </ListItem>
+                          );
+                        })}
+                      </ul>
+                    </NavigationMenu.Content>
+                  </>
+                ) : (
+                  <NavigationMenu.Link
+                    key={it.id}
+                    className="NavigationMenuLink"
+                    href={it.link}
+                  >
+                    {it.name}
+                  </NavigationMenu.Link>
+                )}
+              </NavigationMenu.Item>
+            );
+          })}
+
+          <NavigationMenu.Indicator className="NavigationMenuIndicator">
+            <div className="Arrow" />
+          </NavigationMenu.Indicator>
+        </NavigationMenu.List>
+
+        <div className="ViewportPosition">
+          <NavigationMenu.Viewport className="NavigationMenuViewport" />
+        </div>
+      </NavigationMenu.Root>
+    </div>
   );
 };
 

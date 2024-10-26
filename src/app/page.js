@@ -1,12 +1,15 @@
+import { ButtonUp } from "@/components/ButtonUp/ButtonUp";
+import { Catalog } from "@/components/Catalog/Catalog";
 import { HeaderComponent } from "@/components/HeaderComponent/HeaderComponent";
-import { Flex, Text, Button } from "@radix-ui/themes";
+import { Flex, Text } from "@radix-ui/themes";
 
 export default function Home() {
   return (
     <Flex direction="column" gap="2">
-      <HeaderComponent/>
-      <Text>Hello from Radix Themes</Text>
-      <Button>Let go</Button>
+      <HeaderComponent />
+      <Catalog />
+      <Text>Footer: Cookes, Vacancies, Help, Services, PartnerShip</Text>
+      <ButtonUp />
     </Flex>
   );
 }
