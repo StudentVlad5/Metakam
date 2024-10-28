@@ -1,14 +1,15 @@
 "use client";
 import { Button } from "@radix-ui/themes";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export const ButtonBuy = ({ uuid }) => {
+  const router = useRouter();
   return (
     <Button
       className="buyButton"
       radius="large"
       type="button"
-      onClick={() => redirect(`/${uuid}`)}
+      onClick={() => router(`/${uuid}`)}
     >
       Buy
     </Button>

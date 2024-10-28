@@ -3,6 +3,7 @@ import catalog from "../../const/good.json";
 import Image from "next/image";
 import "./styles.css";
 import { ButtonBuy } from "./ButtonBuy";
+import { CardItem } from "./CardItem";
 
 export const Catalog = () => {
   return (
@@ -16,11 +17,12 @@ export const Catalog = () => {
       <Flex gap="3" wrap="wrap" justify="center" align="center" p="20">
         {catalog.map((it) => {
           return (
-            <Box
+            <CardItem
               key={it.uuid}
               width={300}
               className="cardItem"
               style={{ padding: "20px" }}
+              uuid={it.uuid}
             >
               <Image
                 className="cardImage"
@@ -43,7 +45,7 @@ export const Catalog = () => {
                 <p>Discount: {it.discount_usd} usd</p>
                 <ButtonBuy uuid={it.uuid} />
               </Flex>
-            </Box>
+            </CardItem>
           );
         })}
       </Flex>
