@@ -36,7 +36,7 @@ export default function ProductItem() {
   };
 
   return (
-    <Flex direction="row" wrap="wrap">
+    <Flex direction="row" wrap={{ xs: "wrap", sm: "nowrap", lg: "nowrap" }}>
       <Flex gap="5" wrap="wrap" justify="center" align="center">
         <Image
           src={product.mainImage}
@@ -61,7 +61,7 @@ export default function ProductItem() {
           );
         })}
         <Flex
-          direction="column"
+          direction="row"
           justify="center"
           align="center"
           width="100%"
@@ -83,47 +83,55 @@ export default function ProductItem() {
               </RadioGroup.Root>
             )}
           </Flex>
-          <Box>
-            <Text size={{ xs: "6", sm: "8", lg: "9" }}>
-              Price: {product.price_usd} usd
-            </Text>
-          </Box>
-          <Flex
-            direction={"column"}
-            justify={"center"}
-            align={"center"}
-            gap={"2"}
-          >
-            <Button
-              size="3"
-              type="button"
-              onClick={() => setCount((prev) => prev + 1)}
+          <Flex direction={"row"} gap="7">
+            <Flex
+              direction={"column"}
+              justify={"center"}
+              align={"center"}
+              gap={"2"}
             >
-              +
-            </Button>
-            <Box>
-              <Text size={{ xs: "6", sm: "8", lg: "9" }}>Count: {count}</Text>
-            </Box>
-            <Button
-              size="3"
-              type="button"
-              onClick={() => setCount((prev) => prev - 1)}
-              disabled={count === 0}
-            >
-              <Text>-</Text>
-            </Button>
+              <Button
+                size="3"
+                type="button"
+                onClick={() => setCount((prev) => prev + 1)}
+              >
+                +
+              </Button>
+              <Box>
+                <Text size={{ xs: "4", sm: "6", lg: "7" }}>Count: {count}</Text>
+              </Box>
+              <Button
+                size="3"
+                type="button"
+                onClick={() => setCount((prev) => prev - 1)}
+                disabled={count === 0}
+              >
+                <Text>-</Text>
+              </Button>
+            </Flex>
+            <Flex direction={"column"}>
+              <Box>
+                <Text size={{ xs: "4", sm: "5", lg: "6" }}>
+                  Price: {product.price_usd} usd
+                </Text>
+              </Box>
+              <Box>
+                <Text size={{ xs: "6", sm: "8", lg: "9" }}>
+                  Total: {total} usd
+                </Text>
+              </Box>
+              <Button
+                type="button"
+                radius="large"
+                disabled={count < 1 || !size}
+                onClick={() => {
+                  alert(`your make order for ${count} ${size} ${total}`);
+                }}
+              >
+                Buy
+              </Button>
+            </Flex>
           </Flex>
-          <Box>Total: {total} usd</Box>
-          <Button
-            type="button"
-            radius="large"
-            disabled={count < 1 || !size}
-            onClick={() => {
-              alert(`your make order for ${count} ${size} ${total}`);
-            }}
-          >
-            Buy
-          </Button>
         </Flex>
       </Flex>
       <Box
