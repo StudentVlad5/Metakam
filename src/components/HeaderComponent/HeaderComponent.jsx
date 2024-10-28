@@ -1,10 +1,10 @@
 import React from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import classNames from "classnames";
-import { CaretDownIcon } from "@radix-ui/react-icons";
+import arrowDown from "../../../public/arrow-down-3101.svg";
 import "./styles.css";
-// import Link from "next/link";
 import data from "../../const/header.json";
+import Image from "next/image";
 
 export const HeaderComponent = () => {
   return (
@@ -21,7 +21,14 @@ export const HeaderComponent = () => {
                   <>
                     <NavigationMenu.Trigger className="NavigationMenuTrigger">
                       {it.name}{" "}
-                      <CaretDownIcon className="CaretDown" aria-hidden />
+                      <Image
+                        width="7"
+                        height="7"
+                        src={arrowDown}
+                        alt="arrow"
+                        className="CaretDown"
+                        aria-hidden
+                      />
                     </NavigationMenu.Trigger>
 
                     <NavigationMenu.Content className="NavigationMenuContent">
