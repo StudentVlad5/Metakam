@@ -66,6 +66,7 @@ export default function ProductItem() {
           align="center"
           width="100%"
           gap="9"
+          p="2"
         >
           <Flex direction="column" gap="3" maxWidth="200px">
             {product.sizes && (
@@ -76,14 +77,14 @@ export default function ProductItem() {
                 {product.sizes.split(",").map((it) => {
                   return (
                     <RadioGroup.Item key={it} value={it}>
-                      <Text size={{ xs: "5", sm: "6", lg: "7" }}>{it}</Text>
+                      <Text size={{ xs: "4", sm: "4", lg: "5" }}>{it}</Text>
                     </RadioGroup.Item>
                   );
                 })}
               </RadioGroup.Root>
             )}
           </Flex>
-          <Flex direction={"row"} gap="7">
+          <Flex direction={"row"} gap="5">
             <Flex
               direction={"column"}
               justify={"center"}
@@ -116,7 +117,7 @@ export default function ProductItem() {
                 </Text>
               </Box>
               <Box>
-                <Text size={{ xs: "6", sm: "8", lg: "9" }}>
+                <Text size={{ xs: "6", sm: "7", lg: "8" }}>
                   Total: {total} usd
                 </Text>
               </Box>
