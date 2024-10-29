@@ -9,7 +9,7 @@ export const ButtonBuy = ({ uuid }) => {
       className="buyButton"
       radius="large"
       type="button"
-      onClick={() => router(`/${uuid}`)}
+      onClick={() => router.push(`/${uuid}`)}
     >
       Buy
     </Button>

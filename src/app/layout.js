@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
           <Flex direction="column" gap="2">
             <HeaderComponent />
             {children}
-            <Text>Footer: Cookes, Vacancies, Help, Services, PartnerShip</Text>
+            <Text align={"center"} margin={"auto"}>Footer: Cookes, Vacancies, Help, Services, PartnerShip</Text>
             <ButtonUp />
           </Flex>
           <ThemePanel />

@@ -11,8 +11,8 @@ export default function ProductItem() {
   const { id } = params;
   const product = catalog.find((it) => it.uuid === id);
   const productImgArray = useMemo(
-    () => product.images.split(",").map((it) => it.trimStart()),
-    [product.images]
+    () => product?.images.split(",").map((it) => it.trimStart()),
+    [product?.images]
   );
   let [error, setError] = useState([]);
   const [size, setSize] = useState("");
@@ -21,45 +21,51 @@ export default function ProductItem() {
 
   useEffect(() => {
     let p = [];
-    productImgArray.map((it) => {
-      p.push(true);
-    });
+    {
+      productImgArray &&
+        productImgArray.map((it) => {
+          p.push(true);
+        });
+    }
     setError(p);
   }, [productImgArray]);
 
   useEffect(() => {
-    setTotal(count * product.price_usd);
-  }, [count, product.price_usd]);
+    setTotal(Math.round(count * product?.price_usd * 100) / 100);
+  }, [count, product?.price_usd]);
 
   const handleChange = (e) => {
     setSize(e);
   };
 
-  return (
+  return product ? (
     <Flex direction="row" wrap={{ xs: "wrap", sm: "nowrap", lg: "nowrap" }}>
       <Flex gap="5" wrap="wrap" justify="center" align="center">
-        <Image
-          src={product.mainImage}
-          width={320}
-          height={420}
-          alt={product.title}
-        />
-        {productImgArray.map((it, ind) => {
-          return (
-            <Image
-              key={ind}
-              src={error[ind] ? it : product.mainImage}
-              width={320}
-              height={420}
-              alt={it}
-              onError={() => {
-                let newArr = [...error];
-                newArr[ind] = false;
-                setError(newArr);
-              }}
-            />
-          );
-        })}
+        {product?.mainImage && (
+          <Image
+            src={product?.mainImage}
+            width={320}
+            height={420}
+            alt={product?.title}
+          />
+        )}
+        {productImgArray &&
+          productImgArray.map((it, ind) => {
+            return (
+              <Image
+                key={ind}
+                src={error[ind] ? it : product?.mainImage}
+                width={320}
+                height={420}
+                alt={it}
+                onError={() => {
+                  let newArr = [...error];
+                  newArr[ind] = false;
+                  setError(newArr);
+                }}
+              />
+            );
+          })}
         <Flex
           direction="row"
           justify="center"
@@ -69,7 +75,7 @@ export default function ProductItem() {
           p="2"
         >
           <Flex direction="column" gap="3" maxWidth="200px">
-            {product.sizes && (
+            {product?.sizes && (
               <RadioGroup.Root
                 name="sizes"
                 onValueChange={(e) => handleChange(e)}
@@ -94,26 +100,31 @@ export default function ProductItem() {
               <Button
                 size="3"
                 type="button"
+                style={{ width: "100%" }}
+                radius="Large"
                 onClick={() => setCount((prev) => prev + 1)}
               >
-                +
+                Add
               </Button>
-              <Box>
-                <Text size={{ xs: "4", sm: "6", lg: "7" }}>Count: {count}</Text>
-              </Box>
               <Button
                 size="3"
                 type="button"
+                radius="Large"
                 onClick={() => setCount((prev) => prev - 1)}
                 disabled={count === 0}
               >
-                <Text>-</Text>
+                Reduce
               </Button>
             </Flex>
-            <Flex direction={"column"}>
+            <Flex direction={"column"} gap="3">
+              <Box>
+                <Text size={{ xs: "4", sm: "6", lg: "7" }}>
+                  Amount: {count}
+                </Text>
+              </Box>
               <Box>
                 <Text size={{ xs: "4", sm: "5", lg: "6" }}>
-                  Price: {product.price_usd} usd
+                  Price: {product?.price_usd} usd
                 </Text>
               </Box>
               <Box>
@@ -145,9 +156,11 @@ export default function ProductItem() {
           direction={"column"}
           justify={"center"}
           align={"center"}
-          dangerouslySetInnerHTML={{ __html: product.description }}
+          dangerouslySetInnerHTML={{ __html: product?.description }}
         ></Flex>
       </Box>
     </Flex>
+  ) : (
+    <Text>We can&apos;t find anything. Try again</Text>
   );
 }
