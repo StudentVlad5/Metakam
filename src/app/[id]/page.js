@@ -116,7 +116,7 @@ export default function ProductItem() {
                 Reduce
               </Button>
             </Flex>
-            <Flex direction={"column"} gap="3" minWidth={"200px"}>
+            <Flex direction={"column"} gap="3" minWidth={"230px"}>
               <Box>
                 <Text size={{ xs: "4", sm: "6", lg: "7" }}>
                   Amount: {count}
